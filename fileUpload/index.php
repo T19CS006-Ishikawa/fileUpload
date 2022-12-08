@@ -20,7 +20,7 @@ if(isset($_FILES['upfile'])){
     //ファイルデータがあるかの確認
     if(!empty($_FILES['upfile']['tmp_name'])){
         //アップロード位置と名前を設定
-        $upName= "upfile/".$_FILES['upfile']['name'];
+        $upName= "./upfile/".$_FILES['upfile']['name'];
         
         //アップロード処理
         if(move_uploaded_file($_FILES['upfile']['tmp_name'],$upName)){
