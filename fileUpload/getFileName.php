@@ -1,5 +1,4 @@
 
-
 <?php
 //呼び出されるPHP(ex. getPath.php)
 $dir = @opendir('/upfile');
