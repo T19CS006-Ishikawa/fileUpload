@@ -9,7 +9,7 @@
 			<input type = "submit" value ="送信">
 		</form>
 		<form action = "./getFileName.php"	method="POST">
-			<input type = "submit" value ="ファイル名一覧">
+			<input type = "submit" value ="一覧">
 		</form>
 
 	</body>
