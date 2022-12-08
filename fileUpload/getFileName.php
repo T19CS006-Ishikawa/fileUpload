@@ -1,17 +1,12 @@
 
 <?php
 //呼び出されるPHP(ex. getPath.php)
-$dir = @opendir('/upfile');
+//$dir = @opendir('/upfile');
 
-if($dir)
-{
-while($file = readdir($dir)) 
-{
- if (!is_dir($file)){echo $file ."\n";}
-}
-closedir($dir);
-}
-
+$result = glob('./SampleDirectory/*.php');
+var_dump($result);
 ?>
+
+
 
 
