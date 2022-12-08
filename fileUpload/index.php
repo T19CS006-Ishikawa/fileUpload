@@ -24,7 +24,7 @@ if(isset($_FILES['upfile'])){
         
         //アップロード処理
         if(move_uploaded_file($_FILES['upfile']['tmp_name'],$upName)){
-            echo "アップロードに成功しました。";
+            echo $upName."のアップロードに成功しました。";
         }else{
             echo "アップロードに失敗しました。";
         }
