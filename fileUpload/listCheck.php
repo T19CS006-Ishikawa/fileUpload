@@ -6,6 +6,11 @@ $count = 0;
 $name = array();
 $path = $result[0];
 echo $path;
+
+$rf = fopen($path,"r");
+echo $rf;
+fclose(handle);
+
 /*
 while($count <= count($result) ){
     //echo $result[$count];
