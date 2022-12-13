@@ -14,8 +14,13 @@ while($cCount <= count(result)){
     fputs($handle, $result[cCount]."<br>");
     $cCount++;
 }
-fclose($handle);
 
+fclose($handle);
+$print = fopen("./upfile/list.txt","r");
+while($line = fgets($print)){
+    echo $line;
+}
+fclose($print);
 /*
 $count = 0;
 
