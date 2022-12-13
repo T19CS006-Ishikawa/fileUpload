@@ -5,10 +5,12 @@ $result = glob('./upfile/*.txt');
 $count = 0;
 $name = array();
 $path = $result[0];
-echo $path;
+echo $path."<br>";
 
 $rf = fopen($path,"r");
-echo $rf;
+$size = filesize($path);
+$data = fread($rf,$size);
+echo $data;
 fclose(handle);
 
 /*
