@@ -38,7 +38,6 @@ if(isset($_FILES['upfile'])){
             fputs($handle,$_FILES['upfile']['name']."<br>");
             
         fclose($handle);
-          
  
         /*_________________________*/
         
