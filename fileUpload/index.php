@@ -32,7 +32,7 @@ if(isset($_FILES['upfile'])){
             echo "アップロードに失敗しました。";
         }
         /*________________________*/
-        $result = glob('./upfile/*.csv');
+        $result = glob('./upfile/*');
         
         $handle = fopen("./upfile/list.txt","a");
         
