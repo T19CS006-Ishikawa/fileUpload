@@ -1,4 +1,4 @@
 <?php
-$result = glob('./upfile/list.txt');
+$result = glob('./upfile/');
 var_dump($result);
   ?>
