@@ -3,7 +3,7 @@
 //呼び出されるPHP(ex. getPath.php)
 //$dir = @opendir('/upfile');
 
-$result = glob('./upfile/*.csv');
+$result = glob('./upfile/*');
 
 //var_dump($result);
 

@@ -1,5 +1,5 @@
 <?php
-$result = glob('./upfile/');
+$result = glob('./upfile/*');
 //var_dump($result);
 /*
 $fname = $result[0];
