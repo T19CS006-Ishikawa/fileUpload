@@ -38,7 +38,8 @@ if(isset($_FILES['upfile'])){
         
         $cCount = 0;
         while($cCount <= count(result)){
-            fputs($handle, $result[cCount]."<br>");
+           // fputs($handle, $result[cCount]."<br>");
+              fputs($handle,"あいうえお<br>");
             $cCount++;
         }
         /*_________________________*/
