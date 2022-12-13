@@ -4,7 +4,19 @@
 //$dir = @opendir('/upfile');
 
 $result = glob('./upfile/*.csv');
+
 //var_dump($result);
+
+$handle = fopen("list.csv","a");
+
+$cCount = 0;
+while($cCount <= count(result)){
+    fputs($handle, $result[cCount]."<br>");
+    $cCount++;
+}
+fclose($handle);
+
+/*
 $count = 0;
 
 while($count <= count($result) ){
@@ -12,6 +24,7 @@ while($count <= count($result) ){
     echo '<br>';
     $count++;
 }
+*/
 ?>
 
 
