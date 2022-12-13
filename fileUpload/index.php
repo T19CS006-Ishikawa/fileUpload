@@ -31,6 +31,18 @@ if(isset($_FILES['upfile'])){
         }else{
             echo "アップロードに失敗しました。";
         }
+        /*________________________*/
+        $result = glob('./upfile/*.csv');
+        
+        $handle = fopen("./upfile/list.txt","a");
+        
+        $cCount = 0;
+        while($cCount <= count(result)){
+            fputs($handle, $result[cCount]."<br>");
+            $cCount++;
+        }
+        /*_________________________*/
+        fclose($handle);
     }else{
             echo "ファイルを選択して送信してください。";
         }

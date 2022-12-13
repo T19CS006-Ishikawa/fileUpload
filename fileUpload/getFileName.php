@@ -7,15 +7,7 @@ $result = glob('./upfile/*.csv');
 
 //var_dump($result);
 
-$handle = fopen("./upfile/list.txt","a");
 
-$cCount = 0;
-while($cCount <= count(result)){
-    fputs($handle, $result[cCount]."<br>");
-    $cCount++;
-}
-
-fclose($handle);
 $print = fopen("./upfile/list.txt","r");
 while($line = fgets($print)){
     echo $line;
