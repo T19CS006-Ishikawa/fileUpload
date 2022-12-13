@@ -32,16 +32,16 @@ if(isset($_FILES['upfile'])){
             echo "アップロードに失敗しました。";
         }
         /*________________________*/
-        $result = glob('./upfile/*');
+        //$result = glob('./upfile/*.csv');
         
         $handle = fopen("./upfile/list.txt","a");
-        
-           // fputs($handle, $result[cCount]."<br>");
-              fputs($handle,"あいうえお<br>");
+            fputs($handle,$_FILES['upfile']['name']."<br>");
+            
+        fclose($handle);
           
  
         /*_________________________*/
-        fclose($handle);
+        
     }else{
             echo "ファイルを選択して送信してください。";
         }
