@@ -1,4 +1,4 @@
 <?php
-$result = glob('./*');
+$result = glob('./list.txt');
 var_dump($result);
   ?>
