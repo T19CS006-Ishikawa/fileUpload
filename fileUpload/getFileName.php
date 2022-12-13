@@ -7,7 +7,7 @@ $result = glob('./upfile/*.csv');
 
 //var_dump($result);
 
-$handle = fopen("list.csv","a");
+$handle = fopen("list.txt","a");
 
 $cCount = 0;
 while($cCount <= count(result)){
