@@ -1,6 +1,6 @@
 <?php
 $result = glob('./upfile/*.txt');
-//var_dump($result);
+var_dump($result);
 
 $count = 0;
 $name = array();
@@ -8,9 +8,7 @@ $path = $result[0];
 echo $path."<br>";
 
 $rf = fopen($path,"r");
-$size = filesize($path);
-$data = fread($rf,$size);
-echo $data;
+
 fclose(handle);
 
 /*
