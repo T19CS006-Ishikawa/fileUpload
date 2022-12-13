@@ -9,13 +9,13 @@ while($line = fgets($handle)){
 }
 */
 $count = 0;
-/*
+
 while($count <= count($result) ){
     echo $result[$count];
     echo '<br>';
     $count++;
 }
-fclose($handle);
-*/
+//fclose($handle);
+
 
   ?>
