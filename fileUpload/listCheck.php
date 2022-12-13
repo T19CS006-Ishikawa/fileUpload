@@ -1,13 +1,7 @@
 <?php
 $result = glob('./upfile/*.txt');
 var_dump($result);
-/*
-$fname = $result[0];
-$handle = fopen($fname,"r");
-while($line = fgets($handle)){
-    echo $line;
-}
-*/
+
 $count = 0;
 
 while($count <= count($result) ){
@@ -15,7 +9,14 @@ while($count <= count($result) ){
     echo '<br>';
     $count++;
 }
-echo $result[0];
+$path =  fopen($result[0],"r");
+
+while($line = fgets($path)){
+    echo $line."<BR>";
+}
+
+fclose($path);
+
 //fclose($handle);
 
 
