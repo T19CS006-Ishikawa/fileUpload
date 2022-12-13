@@ -36,12 +36,10 @@ if(isset($_FILES['upfile'])){
         
         $handle = fopen("./upfile/list.txt","a");
         
-        $cCount = 0;
-        while($cCount <= count(result)){
            // fputs($handle, $result[cCount]."<br>");
               fputs($handle,"あいうえお<br>");
-            $cCount++;
-        }
+          
+ 
         /*_________________________*/
         fclose($handle);
     }else{
