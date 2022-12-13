@@ -15,6 +15,7 @@ while($count <= count($result) ){
     echo '<br>';
     $count++;
 }
+echo $result[0];
 //fclose($handle);
 
 
