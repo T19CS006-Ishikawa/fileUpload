@@ -1,6 +1,6 @@
 <?php
 $result = glob('./upfile/*.txt');
-var_dump($result);
+//var_dump($result);
 
 $count = 0;
 $name = array();
