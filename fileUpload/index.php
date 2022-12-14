@@ -35,7 +35,7 @@ if(isset($_FILES['upfile'])){
         //$result = glob('./upfile/*.csv');
         
         $handle = fopen("./upfile/list.txt","a");
-            fputs($handle,$_FILES['upfile']['name']);
+            fputs($handle,$_FILES['upfile']['name']."\n");
             
         fclose($handle);
  
