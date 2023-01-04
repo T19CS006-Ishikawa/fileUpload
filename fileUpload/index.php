@@ -14,9 +14,10 @@
 		<form action = "./listCheck.php"	method="POST">
 			<input type = "submit" value ="確認">
 		</form>
-		<form	enctype = "multipart/form-data" action = "./getCSV.php"	method="POST">
-			<input type = "submit" value ="CSV">
+		<form action = "./ftp.php"	method="POST">
+			<input type = "submit" value ="FTP">
 		</form>
+
 
 	</body>
 </html>
@@ -41,6 +42,8 @@ if(isset($_FILES['upfile'])){
             fputs($handle,$_FILES['upfile']['name']."|");
             
         fclose($handle);
+        
+        
  
         /*_________________________*/
         
