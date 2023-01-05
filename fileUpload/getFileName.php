@@ -9,9 +9,8 @@ $result = glob('./upfile/*');
 
 
 $print = fopen("./upfile/list.txt","r");
-while($line = fgets($print)){
-    echo $line;
-}
+
+    echo $print;
 fclose($print);
 
 /*
