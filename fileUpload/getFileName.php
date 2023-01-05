@@ -9,8 +9,8 @@ $result = glob('./upfile/*');
 
 
 $print = fopen("./upfile/list.txt","r");
+    echo fgets($print);
 
-    echo $print;
 fclose($print);
 
 /*
@@ -22,7 +22,7 @@ while($count <= count($result) ){
     
     $count++;
 }
-*/
+
 ?>
 
 
