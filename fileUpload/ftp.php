@@ -36,7 +36,7 @@ if ((!$conn_id) || (!$login_result)){
         
         // ファイルをアップロードする
         if (ftp_put($conn_id, $server_file, $local_file, FTP_ASCII)) {
-
+            echo   "アップロード完了";
         } else {
             echo "ファイルをアップロードできません。";
         }
