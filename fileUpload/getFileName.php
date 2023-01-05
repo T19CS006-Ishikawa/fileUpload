@@ -9,9 +9,14 @@ $result = glob('./upfile/*');
 
 
 $print = fopen("./upfile/list.txt","r");
-    echo fgets($print);
-
+$name = fgets($print);
+echo $name;
+/*
+while($line = fgets($print)){
+    echo $line;
+}
 fclose($print);
+*/
 
 /*
 $count = 0;
@@ -22,7 +27,7 @@ while($count <= count($result) ){
     
     $count++;
 }
-
+*/
 ?>
 
 
