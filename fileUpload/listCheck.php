@@ -1,5 +1,5 @@
 <?php
-$result = glob('./upfile/*.txt');
+$result = glob('./upfile/*.csv');
 var_dump($result);
 
 $count = 0;
