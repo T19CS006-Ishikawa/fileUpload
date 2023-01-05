@@ -1,57 +1,50 @@
-<!doctype html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content = "text/html;charset=UTF-8">
-	</head>
-	<body>
-		<form	enctype = "multipart/form-data" action = "./index.php"	method="POST">
-			<input type = "file" name = "upfile"><br>
-			<input type = "submit" value ="送信">
-		</form>
-		<form action = "./getFileName.php"	method="POST">
-			<input type = "submit" value ="一覧">
-		</form>
-		<form action = "./listCheck.php"	method="POST">
-			<input type = "submit" value ="確認">
-		</form>
-		
-		<form	enctype = "multipart/form-data" action = "./ftp.php"	method="POST">
-			<input type = "file" name = "ftpfile"><br>
-			<input type = "submit" value ="FTP送信">
-		</form>
-
-
-	</body>
-</html>
 <?php
-//送信ボタンからの遷移か確認
-if(isset($_FILES['upfile'])){
-    //ファイルデータがあるかの確認
-    if(!empty($_FILES['upfile']['tmp_name'])){
-        //アップロード位置と名前を設定
-        $upName= "./upfile/".$_FILES['upfile']['name'];
-        
-        //アップロード処理
-        if(move_uploaded_file($_FILES['upfile']['tmp_name'],$upName)){
-            echo $upName."のアップロードに成功しました。";
-        }else{
-            echo "アップロードに失敗しました。";
-        }
-        /*________________________*/
-        //$result = glob('./upfile/*.csv');
-        
-        $handle = fopen("./upfile/list.txt","a");
-            fputs($handle,$_FILES['upfile']['name']."|");
-            
-        fclose($handle);
-        
-        
- 
-        /*_________________________*/
-        
+if( $_FILES['file']['size'] > 0 ){
+    do{
+        $flg = false;
+        //FTPサーバとアカウント情報
+        $server = "192.168.11.6"; //送り先のFTPサーバー名もしくはIP
+        $user = "taku"; //送り先のFTPユーザ
+        $pass = "12345"; //送り先のFTPパスワード
+        $remoteDir = './file/'; //送り先のディレクトリ
+        $localDir = './ftpfile/'; //ローカル側の一時アップロードディレクトリ
+        //FTPサーバに接続
+        $ftp = ftp_connect($server);
+        if( !$ftp ) break;
+        //ログイン
+        if( !ftp_login($ftp, $user, $pass) ) break;
+        //FTPサーバ上でディレクトリ移動
+        if( !ftp_chdir($ftp, $remoteDir) ) break;
+        //ローカル側に一度アップロード
+        if( !move_uploaded_file($_FILES['file']["tmp_name"], $localDir . $_FILES['file']['name']) ) break;
+        //アップロード
+        $local = $localDir . $_FILES['file']['name']; //アップロードするファイル
+        $remote = $_FILES['file']['name']; //アップロード時の名前
+        if( !ftp_put($ftp, $remote, $local, FTP_BINARY) ) break;
+        //ローカル側のファイルを削除
+        unlink( $localDir . $_FILES['file']['name'] );
+        //接続を閉じる
+        ftp_close($ftp);
+        $flg = true;
+    }while(0);
+    if( $flg ){
+        //アップロード成功時の処理
+        echo "success";
     }else{
-            echo "ファイルを選択して送信してください。";
-        }
+        //アップロード失敗時の処理
+        echo "どんまい";
     }
-
+}
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
