@@ -14,8 +14,10 @@
 		<form action = "./listCheck.php"	method="POST">
 			<input type = "submit" value ="確認">
 		</form>
-		<form action = "./ftp.php"	method="POST">
-			<input type = "submit" value ="FTP">
+		
+		<form	enctype = "multipart/form-data" action = "./ftp.php"	method="POST">
+			<input type = "file" name = "ftpfile"><br>
+			<input type = "submit" value ="FTP送信">
 		</form>
 
 
