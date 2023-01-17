@@ -39,10 +39,10 @@ if(isset($_FILES['upfile'])){
         //list.txt がないなら新規作成+書き込み,あれば追記
         $dir = './upfile/list.txt';
         if(file_exists($dir)){
-            $handle = fopen("./upfile/list.txt","w");
+            $handle = fopen("./upfile/list.txt","a");
             fputs($handle,$_FILES['upfile']['name'].",");
         }else{
-            $handle = fopen("./upfile.list.txt","a");
+            $handle = fopen("./upfile.list.txt","w");
             fputs($handle,$_FILES['upfile']['name'].",");
         }
             
