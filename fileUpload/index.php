@@ -43,7 +43,7 @@ if(isset($_FILES['upfile'])){
             fputs($handle,$_FILES['upfile']['name'].",");
             echo "found";
         }else{
-            $handle = fopen("./upfile.list.txt","w");
+            $handle = fopen("./upfile/list.txt","w");
             fputs($handle,$_FILES['upfile']['name'].",");
             echo "not found";
         }
