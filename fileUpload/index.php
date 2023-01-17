@@ -41,9 +41,11 @@ if(isset($_FILES['upfile'])){
         if(file_exists($dir)){
             $handle = fopen("./upfile/list.txt","a");
             fputs($handle,$_FILES['upfile']['name'].",");
+            echo "found";
         }else{
             $handle = fopen("./upfile.list.txt","w");
             fputs($handle,$_FILES['upfile']['name'].",");
+            echo "not found";
         }
             
         fclose($handle);
