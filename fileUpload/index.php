@@ -11,9 +11,7 @@
 		<form action = "./getFileName.php"	method="POST">
 			<input type = "submit" value ="一覧">
 		</form>
-		<form action = "./listCheck.php"	method="POST">
-			<input type = "submit" value ="確認">
-		</form>
+
 		
 
 
